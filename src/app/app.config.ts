@@ -8,10 +8,12 @@ import {
   withJsonpSupport,
 } from '@angular/common/http';
 import { errorInterceptor } from './shared/interceptors/error.interceptor';
+import { interceptors } from './shared/interceptors';
+import { headerInterceptor } from './shared/interceptors/header.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(withJsonpSupport(), withInterceptors([errorInterceptor])),
+    provideHttpClient(withInterceptors([headerInterceptor])),
     provideRouter(routes),
   ],
 };

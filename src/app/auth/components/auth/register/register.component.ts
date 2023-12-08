@@ -13,6 +13,7 @@ import {
 import { JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { errorInterceptor } from '../../../../shared/interceptors/error.interceptor';
+import { headerInterceptor } from '../../../../shared/interceptors/header.interceptor';
 
 @Component({
   selector: 'app-register',
