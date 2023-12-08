@@ -3,6 +3,7 @@ import { LandingComponent } from './core/components/layouts/landing/landing.comp
 import { autRoutes } from './auth/auth.routes';
 import { LoginComponent } from './auth/components/auth/login/login.component';
 import { dashboadRoutes } from './dashboard/dashboard.routes';
+import { profileRoutes } from './profile/profile.routes';
 
 export const routes: Routes = [
   {
@@ -11,11 +12,7 @@ export const routes: Routes = [
   },
   ...autRoutes,
   ...dashboadRoutes,
-  {
-    path: 'profile',
-    loadChildren: () =>
-      import('./profile/profile.module').then((m) => m.ProfileModule),
-  },
+  ...profileRoutes,
   {
     path: 'post',
     loadChildren: () => import('./post/post.module').then((m) => m.PostModule),

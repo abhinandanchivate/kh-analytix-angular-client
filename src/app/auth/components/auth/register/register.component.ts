@@ -6,9 +6,13 @@ import {
   HttpClient,
   HttpClientModule,
   HttpHandler,
+  provideHttpClient,
+  withInterceptors,
+  withRequestsMadeViaParent,
 } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { errorInterceptor } from '../../../../shared/interceptors/error.interceptor';
 
 @Component({
   selector: 'app-register',
